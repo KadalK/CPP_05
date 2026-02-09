@@ -1,22 +1,24 @@
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 
 int main()
 {
+	Form *formol = new Form;
 	Bureaucrat *lol = new Bureaucrat;
 
-	lol->setGrade(1);
-	std::cout << *lol << std::endl;
+	lol->setGrade(5);
 	try
 	{
-		lol->gradeUp();
 		std::cout << *lol << std::endl;
-		std::cout << lol->getGrade() << std::endl;
+		lol->signForm(*formol);
+		std::cout << *formol << std::endl;
 	}
 	catch(std::exception &kk)
 	{
 		std::cout << kk.what() << std::endl;
 		delete lol;
+		delete formol;
 	}
 }
 
