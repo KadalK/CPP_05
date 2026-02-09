@@ -17,18 +17,15 @@ private:
 public:
 	Form();
 	Form(const Form& );
+	Form(int const );
 	Form &operator=(Form& );
 
 	int				getGradeExe() const;
-//	void				setGradeExe(int );
 
 	int				getGradeSign() const;
-//	void				setGradeSign(int );
 
 	std::string	const	getName() const;
 
-//	void	gradeUp();
-//	void	gradeDown();
 	void	beSigned(Bureaucrat );
 
 	class GradeTooHighException : public std::exception {

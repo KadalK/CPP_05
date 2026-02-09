@@ -4,21 +4,20 @@
 
 int main()
 {
-	Form *formol = new Form;
 	Bureaucrat *lol = new Bureaucrat;
+	lol->setGrade(55);
+	Form formol(66);
 
-	lol->setGrade(5);
 	try
 	{
 		std::cout << *lol << std::endl;
-		lol->signForm(*formol);
-		std::cout << *formol << std::endl;
+		std::cout << formol << std::endl;
+		lol->signForm(formol);
 	}
 	catch(std::exception &kk)
 	{
 		std::cout << kk.what() << std::endl;
 		delete lol;
-		delete formol;
 	}
 }
 
