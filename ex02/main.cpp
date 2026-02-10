@@ -1,17 +1,18 @@
 #include "Bureaucrat.hpp"
+#include "AForm.hpp"
 
 
 int main()
 {
 	Bureaucrat *lol = new Bureaucrat;
+	lol->setGrade(55);
+	AForm Formol("Files" ,66, 11);
 
-	lol->setGrade(1);
-	std::cout << *lol << std::endl;
 	try
 	{
-		lol->gradeUp();
 		std::cout << *lol << std::endl;
-		std::cout << lol->getGrade() << std::endl;
+		std::cout << Formol << std::endl;
+		lol->signAForm(Formol);
 	}
 	catch(std::exception &kk)
 	{
@@ -19,3 +20,5 @@ int main()
 		delete lol;
 	}
 }
+
+

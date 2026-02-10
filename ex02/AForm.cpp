@@ -4,7 +4,7 @@ AForm::AForm() : _name("administrative shit"), _signe(false), _gradeToSign(150),
 
 AForm::AForm(const AForm& copy) : _name(copy._name), _signe(false), _gradeToSign(copy._gradeToSign), _gradeToExe(copy._gradeToExe) {}
 
-AForm::AForm(int const grade) : _name("administrative shit"), _gradeToSign(grade), _gradeToExe(150) {}
+AForm::AForm(std::string const name, int const gradeToSing, int const gradeToExe) : _name(name), _gradeToSign(gradeToSing), _gradeToExe(gradeToExe) , _signe(false) {}
 
 AForm& AForm::operator=(AForm& rhs){
 	if (this != &rhs)

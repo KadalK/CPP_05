@@ -17,13 +17,11 @@ private:
 public:
 	AForm();
 	AForm(const AForm& );
-	AForm(int const );
+	AForm(std::string const , int const , int const);
 	AForm &operator=(AForm& );
 
-	int				getGradeExe() const;
-
-	int				getGradeSign() const;
-
+	int					getGradeExe() const;
+	int					getGradeSign() const;
 	std::string	const	getName() const;
 
 	void	beSigned(Bureaucrat );

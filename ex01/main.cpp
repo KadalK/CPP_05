@@ -1,18 +1,18 @@
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 
 
 int main()
 {
 	Bureaucrat *lol = new Bureaucrat;
 	lol->setGrade(55);
-	Form formol(66);
+	AForm AFormol(66);
 
 	try
 	{
 		std::cout << *lol << std::endl;
-		std::cout << formol << std::endl;
-		lol->signForm(formol);
+		std::cout << AFormol << std::endl;
+		lol->signAForm(AFormol);
 	}
 	catch(std::exception &kk)
 	{
