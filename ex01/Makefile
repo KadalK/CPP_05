@@ -2,8 +2,8 @@ NAME = Bureaucrat
 CPP= c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -g3
 
-SRCS = main.cpp Bureaucrat.cpp AAForm.cpp
-INCS = Bureaucrat.hpp AForm.hpp
+SRCS = main.cpp Bureaucrat.cpp Form.cpp
+INCS = Bureaucrat.hpp Form.hpp
 
 $(NAME): $(SRCS) $(INCS) Makefile
 	$(CPP) $(CFLAGS) $(SRCS) -o $(NAME)

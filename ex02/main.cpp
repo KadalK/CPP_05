@@ -8,20 +8,22 @@
 int main()
 {
 	srand(time(0));
-	Bureaucrat *lol = new Bureaucrat("lol");
-	lol->setGrade(1);
 	AForm *tree = new ShrubberyCreationForm();
 	AForm *robot = new RobotomyRequestForm();
-//	AForm *prez = new PresidentialPardonForm();
+	AForm *prez = new PresidentialPardonForm();
+	Bureaucrat *lol = NULL;
+
 
 	try
 	{
+		lol = new Bureaucrat("lol");
+		lol->setGrade(1);
 		std::cout << *lol << std::endl;
 		std::cout << *tree << std::endl;
 		lol->signAForm(tree);
 		tree->executeAction(*lol);
 		robot->executeAction(*lol);
-//		prez->executeAction(*lol);
+		prez->executeAction(*lol);
 	}
 	catch(std::exception &kk)
 	{

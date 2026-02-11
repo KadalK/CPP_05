@@ -4,7 +4,12 @@ AForm::AForm() : _name("AForm"), _signe(false), _gradeToSign(150), _gradeToExe(1
 
 AForm::AForm(const AForm& copy) : _name(copy._name), _signe(false), _gradeToSign(copy._gradeToSign), _gradeToExe(copy._gradeToExe) {}
 
-AForm::AForm(std::string const name, int const gradeToSing, int const gradeToExe) : _name(name), _signe(false), _gradeToSign(gradeToSing), _gradeToExe(gradeToExe) {}
+AForm::AForm(std::string const name, int const gradeToSing, int const gradeToExe) : _name(name), _signe(false), _gradeToSign(gradeToSing), _gradeToExe(gradeToExe) {
+	if (gradeToSing > 150 || gradeToExe > 150)
+		throw GradeTooLowException();
+	if (gradeToSing < 0 || gradeToExe < 0)
+		throw GradeTooHighException();
+}
 
 AForm& AForm::operator=(const AForm& rhs){
 	if (this != &rhs)
@@ -43,11 +48,11 @@ void	AForm::execute(Bureaucrat& bureaucrat)
 }
 
 const char *AForm::GradeTooHighException::what() const throw() {
-	return ("You are the boss, dont do the dirty work");
+	return ("Grade to hight");
 }
 
 const char *AForm::GradeTooLowException::what() const throw() {
-	return ("This form does not concern you, mouve around");
+	return ("Grade to low");
 }
 
 std::ostream& operator<<(std::ostream &o, AForm& rhs)

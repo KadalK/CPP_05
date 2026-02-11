@@ -1,30 +1,35 @@
-#include "AForm.hpp"
+#include "Form.hpp"
 
-AForm::AForm() : _name("administrative shit"), _signe(false), _gradeToSign(150), _gradeToExe(150) {}
+Form::Form() : _name("administrative shit"), _signe(false), _gradeToSign(150), _gradeToExe(150) {}
 
-AForm::AForm(const AForm& copy) : _name(copy._name), _signe(false), _gradeToSign(copy._gradeToSign), _gradeToExe(copy._gradeToExe) {}
+Form::Form(const Form& copy) : _name(copy._name), _signe(false), _gradeToSign(copy._gradeToSign), _gradeToExe(copy._gradeToExe) {}
 
-AForm::AForm(int const grade) : _name("administrative shit"), _gradeToSign(grade), _gradeToExe(150) {}
+Form::Form(int const grade) : _name("administrative shit"), _gradeToSign(grade), _gradeToExe(150) {
+	if (grade > 150)
+		throw GradeTooLowException();
+	if (grade < 1)
+		throw GradeTooHighException() ;
+}
 
-AForm& AForm::operator=(const AForm& rhs){
+Form& Form::operator=(const Form& rhs){
 	if (this != &rhs)
 		this->_signe = rhs._signe;
 	return *this;
 }
 
-int	AForm::getGradeExe() const{
+int	Form::getGradeExe() const{
 	return (this->_gradeToExe);
 }
 
-int	AForm::getGradeSign() const {
+int	Form::getGradeSign() const {
 	return (this->_gradeToSign);
 }
 
-std::string	const	AForm::getName() const{
+std::string	const	Form::getName() const{
 	return (this->_name);
 }
 
-void	AForm::beSigned(Bureaucrat bureaucrat){
+void	Form::beSigned(Bureaucrat bureaucrat){
 	if (bureaucrat.getGrade() <= this->_gradeToSign)
 	{
 		std::cout << bureaucrat.getName() << " signed " << this->getName() << std::endl;
@@ -34,18 +39,18 @@ void	AForm::beSigned(Bureaucrat bureaucrat){
 		throw GradeTooLowException();
 }
 
-const char *AForm::GradeTooHighException::what() const throw() {
-	return ("You are the boss, dont do the dirty work");
+const char *Form::GradeTooHighException::what() const throw() {
+	return ("Grade to hight");
 }
 
-const char *AForm::GradeTooLowException::what() const throw() {
-	return ("This form does not concern you, mouve around");
+const char *Form::GradeTooLowException::what() const throw() {
+	return ("Grade to low");
 }
 
-std::ostream& operator<<(std::ostream &o, AForm& rhs)
+std::ostream& operator<<(std::ostream &o, Form& rhs)
 {
-	o << "This AForm is : " << rhs.getName() << "\nGrade of signe : " << rhs.getGradeSign() << "\nGrade of execute : " << rhs.getGradeExe();
+	o << "This Form is : " << rhs.getName() << "\nGrade of signe : " << rhs.getGradeSign() << "\nGrade of execute : " << rhs.getGradeExe();
 	return o;
 }
 
-AForm::~AForm(){}
+Form::~Form(){}
