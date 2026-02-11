@@ -18,7 +18,7 @@ public:
 	AForm();
 	AForm(const AForm& );
 	AForm(int const );
-	AForm &operator=(AForm& );
+	AForm &operator=(const AForm& );
 
 	int				getGradeExe() const;
 

@@ -12,7 +12,7 @@ public:
 	Bureaucrat();
 	Bureaucrat(const std::string& );
 	Bureaucrat(const Bureaucrat& );
-	Bureaucrat &operator=(Bureaucrat& );
+	Bureaucrat &operator=(const Bureaucrat& );
 
 	int	getGrade() const;
 	void	setGrade(int );

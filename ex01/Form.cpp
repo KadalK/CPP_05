@@ -6,7 +6,7 @@ AForm::AForm(const AForm& copy) : _name(copy._name), _signe(false), _gradeToSign
 
 AForm::AForm(int const grade) : _name("administrative shit"), _gradeToSign(grade), _gradeToExe(150) {}
 
-AForm& AForm::operator=(AForm& rhs){
+AForm& AForm::operator=(const AForm& rhs){
 	if (this != &rhs)
 		this->_signe = rhs._signe;
 	return *this;
@@ -39,7 +39,7 @@ const char *AForm::GradeTooHighException::what() const throw() {
 }
 
 const char *AForm::GradeTooLowException::what() const throw() {
-	return ("This AForm does not concern you, mouve around");
+	return ("This form does not concern you, mouve around");
 }
 
 std::ostream& operator<<(std::ostream &o, AForm& rhs)
