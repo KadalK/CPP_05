@@ -8,7 +8,7 @@
 
 int main()
 {
-	Bureaucrat	*lol = new Bureaucrat("lol");
+	Bureaucrat	*pingouin = new Bureaucrat("pingouin");
 	Intern		randIntern;
 	AForm		*form;
 
@@ -16,18 +16,18 @@ int main()
 
 	try
 	{
-		lol->setGrade(1);
-		form = randIntern.makeForm("robotomy requt", "kaka");
-		std::cout << *lol << std::endl;
+		pingouin->setGrade(5);
+		form = randIntern.makeForm("robotomy request", "Sarah Connor");
+		std::cout << *pingouin << std::endl;
 		std::cout << *form << std::endl;
-		lol->signAForm(form);
-		form->executeAction(*lol);
+		pingouin->signAForm(form);
+		form->executeAction(*pingouin);
 	}
 	catch(std::exception &kk)
 	{
 		std::cout << kk.what() << std::endl;
 	}
-		delete lol;
+		delete pingouin;
 		delete form;
 }
 

@@ -12,7 +12,7 @@ int main()
 	{
 		lol = new Bureaucrat;
 		lol->setGrade(55);
-		Formol =  new Form(-66);
+		Formol =  new Form(66);
 		std::cout << *lol << std::endl;
 		std::cout << *Formol << std::endl;
 		lol->signForm(*Formol);

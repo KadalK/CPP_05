@@ -42,6 +42,9 @@ void	RobotomyRequestForm::beSigned(Bureaucrat& bureaucrat){
 
 void	RobotomyRequestForm::executeAction(Bureaucrat& bureaucrat)
 {
+	if (!this->_signe)
+		throw NotSignedException();
+
 	if (bureaucrat.getGrade() < this->_gradeToExe)
 	{
 		std::cout << " *drill noise* " << std::endl;

@@ -20,7 +20,9 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationF
 
 void	ShrubberyCreationForm::executeAction(Bureaucrat& bureaucrat)
 {
-	if (bureaucrat.getGrade() < this->_gradeToExe && this->_signe)
+	if (!this->_signe)
+		throw NotSignedException();
+	if (bureaucrat.getGrade() < this->_gradeToExe)
 	{
 		std::string filename = this->_target + "_shrubbery";
 		std::ofstream file(filename.c_str());

@@ -28,6 +28,10 @@ public:
 	void			execute(Bureaucrat& );
 	virtual void	executeAction(Bureaucrat& ) = 0;
 
+class	NotSignedException : public std::exception {
+		virtual const char* what() const throw();
+};
+
 	class GradeTooHighException : public std::exception {
 		virtual const char* what() const throw();
 	};

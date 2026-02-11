@@ -8,14 +8,17 @@
 int main()
 {
 	srand(time(0));
-	AForm *tree = new ShrubberyCreationForm();
-	AForm *robot = new RobotomyRequestForm();
-	AForm *prez = new PresidentialPardonForm();
+	AForm *tree = NULL;
+	AForm *robot = NULL;
+	AForm *prez = NULL;
 	Bureaucrat *lol = NULL;
 
 
 	try
 	{
+		tree = new ShrubberyCreationForm();
+		robot = new RobotomyRequestForm();
+		prez = new PresidentialPardonForm();
 		lol = new Bureaucrat("lol");
 		lol->setGrade(1);
 		std::cout << *lol << std::endl;
@@ -32,6 +35,7 @@ int main()
 		delete lol;
 		delete robot;
 		delete tree;
+		delete prez;
 }
 
 
