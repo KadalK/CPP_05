@@ -47,6 +47,9 @@ void	Bureaucrat::gradeDown(){
 }
 
 void	Bureaucrat::signAForm(AForm *AForm){
+	if (!AForm)
+		return;
+
 	std::string	reason = "you stink";
 	if (this->getGrade() > AForm->getGradeSign())
 	{
