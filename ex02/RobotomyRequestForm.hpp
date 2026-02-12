@@ -19,13 +19,14 @@ private:
 	std::string _target;
 public:
 	RobotomyRequestForm();
-	RobotomyRequestForm(const RobotomyRequestForm& );
 	RobotomyRequestForm(const std::string );
+	RobotomyRequestForm(const RobotomyRequestForm& );
 	RobotomyRequestForm& operator=(const RobotomyRequestForm& );
 
 	int					getGradeExe() const;
 	int 				getGradeSign() const;
 	std::string	const	getName() const;
+
 	void	beSigned(Bureaucrat& );
 	void	executeAction(Bureaucrat& );
 

@@ -15,8 +15,8 @@ private:
 	std::string _target;
 public:
 	ShrubberyCreationForm();
-	ShrubberyCreationForm(const ShrubberyCreationForm& );
 	ShrubberyCreationForm(const std::string );
+	ShrubberyCreationForm(const ShrubberyCreationForm& );
 	ShrubberyCreationForm& operator=(const ShrubberyCreationForm& );
 
 	int					getGradeExe() const;
@@ -25,6 +25,7 @@ public:
 
 	void	beSigned(Bureaucrat& );
 	void	executeAction(Bureaucrat& );
+
 	virtual ~ShrubberyCreationForm();
 };
 

@@ -1,8 +1,8 @@
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat() : _name("Mr.Smith"){}
+Bureaucrat::Bureaucrat() : _name("John Doe"), _grade(150) {}
 
-Bureaucrat::Bureaucrat(const std::string& name) : _name(name) {}
+Bureaucrat::Bureaucrat(const std::string& name) : _name(name), _grade(150) {}
 
 Bureaucrat::Bureaucrat(const Bureaucrat& copy) : _name(copy._name), _grade(copy._grade) {}
 
@@ -19,6 +19,16 @@ int	Bureaucrat::getGrade() const {
 }
 
 void	Bureaucrat::setGrade(int grade) {
+	if (grade > 150)
+	{
+		std::cout << "This (" << grade << ") is unavailable :" << std::endl;
+		throw GradeTooLowException();
+	}
+	if (grade < 1)
+	{
+		std::cout << "This grade (" << grade << ") is unavailable" << std::endl;
+		throw GradeTooHighException();
+	}
 	this->_grade = grade;
 }
 
@@ -31,19 +41,13 @@ void	Bureaucrat::gradeUp(){
 
 	if (this->_grade <= 1)
 		throw GradeTooHighException();
-	int tmp = this->_grade;
-	tmp--;
-	this->_grade = tmp;
+	this->_grade--;
 }
 
 void	Bureaucrat::gradeDown(){
 	if (this->_grade >= 150)
-	{
 		throw GradeTooLowException();
-	}
-	int tmp = this->_grade;
-	tmp++;
-	this->_grade = tmp;
+	this->_grade++;
 }
 
 void	Bureaucrat::signAForm(AForm *AForm){

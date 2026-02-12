@@ -52,7 +52,7 @@ const char *AForm::NotSignedException::what() const throw() {
 }
 
 const char *AForm::GradeTooHighException::what() const throw() {
-	return ("Grade to hight");
+	return ("Grade to high");
 }
 
 const char *AForm::GradeTooLowException::what() const throw() {

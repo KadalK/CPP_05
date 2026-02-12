@@ -3,19 +3,19 @@
 
 int main()
 {
-	Bureaucrat *lol = new Bureaucrat;
+	Bureaucrat *pin = NULL;
 
-	lol->setGrade(1);
-	std::cout << *lol << std::endl;
 	try
 	{
-		lol->gradeUp();
-		std::cout << *lol << std::endl;
-		std::cout << lol->getGrade() << std::endl;
+		pin = new Bureaucrat("Truc");
+		pin->setGrade(2);
+		pin->gradeUp();
+		std::cout << *pin << std::endl;
+		std::cout << pin->getGrade() << std::endl;
 	}
-	catch(std::exception &kk)
+	catch(std::exception &ex)
 	{
-		std::cout << kk.what() << std::endl;
-		delete lol;
+		std::cout << ex.what() << std::endl;
 	}
+		delete pin;
 }

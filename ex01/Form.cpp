@@ -40,7 +40,7 @@ void	Form::beSigned(Bureaucrat bureaucrat){
 }
 
 const char *Form::GradeTooHighException::what() const throw() {
-	return ("Grade to hight");
+	return ("Grade to high");
 }
 
 const char *Form::GradeTooLowException::what() const throw() {

@@ -20,10 +20,8 @@ public:
 	Form(int const );
 	Form &operator=(const Form& );
 
-	int				getGradeExe() const;
-
-	int				getGradeSign() const;
-
+	int					getGradeExe() const;
+	int					getGradeSign() const;
 	std::string	const	getName() const;
 
 	void	beSigned(Bureaucrat );

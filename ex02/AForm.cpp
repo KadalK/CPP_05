@@ -1,5 +1,4 @@
 #include "AForm.hpp"
-#include "Bureaucrat.hpp"
 
 AForm::AForm() : _name("AForm"), _signe(false), _gradeToSign(150), _gradeToExe(150) {}
 
@@ -49,7 +48,7 @@ void	AForm::execute(Bureaucrat& bureaucrat)
 }
 
 const char *AForm::GradeTooHighException::what() const throw() {
-	return ("Grade to hight");
+	return ("Grade to high");
 }
 
 const char *AForm::GradeTooLowException::what() const throw() {
