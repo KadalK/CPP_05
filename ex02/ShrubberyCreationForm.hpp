@@ -12,16 +12,23 @@ class Bureaucrat;
 
 class ShrubberyCreationForm : public AForm {
 private:
-	std::string _target;
+	std::string		_target;
+	std::string		_name;
+	bool			_signed;
+	int	const		_gradeToSign;
+	int	const		_gradeToExe;
 public:
 	ShrubberyCreationForm();
 	ShrubberyCreationForm(const std::string );
 	ShrubberyCreationForm(const ShrubberyCreationForm& );
 	ShrubberyCreationForm& operator=(const ShrubberyCreationForm& );
 
+	bool				getSigned() const;
 	int					getGradeExe() const;
 	int					getGradeSign() const;
 	std::string	const	getName() const;
+
+	void	setSigned(bool );
 
 	void	beSigned(Bureaucrat& );
 	void	executeAction(Bureaucrat& );

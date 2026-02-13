@@ -2,6 +2,8 @@
 
 AForm::AForm() : _name("AForm"), _signe(false), _gradeToSign(150), _gradeToExe(150) {}
 
+AForm::AForm(std::string name) : _name(name), _signe(false), _gradeToSign(150), _gradeToExe(150)  {}
+
 AForm::AForm(const AForm& copy) : _name(copy._name), _signe(false), _gradeToSign(copy._gradeToSign), _gradeToExe(copy._gradeToExe) {}
 
 AForm::AForm(std::string const name, int const gradeToSing, int const gradeToExe) : _name(name), _signe(false), _gradeToSign(gradeToSing), _gradeToExe(gradeToExe) {
@@ -45,10 +47,6 @@ void	AForm::execute(Bureaucrat& bureaucrat)
 		executeAction(bureaucrat);
 	else
 		throw GradeTooLowException();
-}
-
-const char *AForm::NotSignedException::what() const throw() {
-	return ("Form not signed");
 }
 
 const char *AForm::GradeTooHighException::what() const throw() {

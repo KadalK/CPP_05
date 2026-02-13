@@ -16,16 +16,23 @@ class Bureaucrat;
 
 class RobotomyRequestForm : public AForm {
 private:
-	std::string _target;
+	std::string		_target;
+	std::string		_name;
+	bool			_signed;
+	int	const		_gradeToSign;
+	int	const		_gradeToExe;
 public:
 	RobotomyRequestForm();
-	RobotomyRequestForm(const RobotomyRequestForm& );
 	RobotomyRequestForm(const std::string );
+	RobotomyRequestForm(const RobotomyRequestForm& );
 	RobotomyRequestForm& operator=(const RobotomyRequestForm& );
 
 	int					getGradeExe() const;
 	int 				getGradeSign() const;
 	std::string	const	getName() const;
+
+	void setSigned(bool );
+
 	void	beSigned(Bureaucrat& );
 	void	executeAction(Bureaucrat& );
 

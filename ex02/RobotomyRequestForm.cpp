@@ -1,19 +1,19 @@
 #include "RobotomyRequestForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm() : AForm("RobotomyRequestForm", 72, 45), _target("John Doe") {}
+RobotomyRequestForm::RobotomyRequestForm() : AForm("ShrubberyCreationForm"), _target("John Doe"), _gradeToSign(145), _gradeToExe(137) {}
+
+RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm("RobotomyRequestForm"), _target(target), _gradeToSign(145), _gradeToExe(137) {}
 
 
-RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& copy) : AForm("RobotomyRequestForm", 72, 45), _target("John Doe") {
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& copy) : AForm("RobotomyRequestForm"), _target("John Doe"), _gradeToSign(145), _gradeToExe(137) {
 	*this = copy;
 }
-
-RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm("RobotomyRequestForm", 72, 45) , _target(target) {}
 
 RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& rhs){
 	if (this != &rhs)
 	{
 		this->_target = rhs._target;
-		this->_signe = rhs._signe;
+		setSigned(rhs._signed);
 	}
 	return *this;
 }
@@ -30,15 +30,21 @@ std::string	const	RobotomyRequestForm::getName() const{
 	return (this->_name);
 }
 
+void	RobotomyRequestForm::setSigned(bool signe)
+{
+	this->_signed = signe;
+}
+
 void	RobotomyRequestForm::beSigned(Bureaucrat& bureaucrat){
 	if (bureaucrat.getGrade() <= this->_gradeToSign)
 	{
 		std::cout << bureaucrat.getName() << " signed " << this->getName() << std::endl;
-		this->_signe = true;
+		setSigned(true);
 	}
 	else
 		throw GradeTooLowException();
 }
+
 
 void	RobotomyRequestForm::executeAction(Bureaucrat& bureaucrat)
 {
