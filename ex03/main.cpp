@@ -21,7 +21,7 @@ int main()
 		std::cout << *pingouin << std::endl;
 		std::cout << *form << std::endl;
 		pingouin->signAForm(form);
-		form->executeAction(*pingouin);
+		form->execute(*pingouin);
 	}
 	catch(std::exception &e)
 	{

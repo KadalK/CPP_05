@@ -34,7 +34,7 @@ public:
 	void setSigned(bool );
 
 	void	beSigned(Bureaucrat& );
-	void	executeAction(Bureaucrat& );
+	void	execute(Bureaucrat const & ) const;
 
 	virtual ~RobotomyRequestForm();
 };

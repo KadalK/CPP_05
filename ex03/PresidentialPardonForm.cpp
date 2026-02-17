@@ -48,7 +48,7 @@ void	PresidentialPardonForm::beSigned(Bureaucrat& bureaucrat){
 		throw GradeTooLowException();
 }
 
-void	PresidentialPardonForm::executeAction(Bureaucrat& bureaucrat){
+void	PresidentialPardonForm::execute(Bureaucrat const & bureaucrat) const{
 	if (bureaucrat.getGrade() <= this->_gradeToSign)
 		std::cout << this->_target << " has been pardoned by Zaphod Beeblebrox" << std::endl;
 	else
