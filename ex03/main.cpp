@@ -23,9 +23,9 @@ int main()
 		pingouin->signAForm(form);
 		form->executeAction(*pingouin);
 	}
-	catch(std::exception &kk)
+	catch(std::exception &e)
 	{
-		std::cout << kk.what() << std::endl;
+		std::cout << e.what() << std::endl;
 	}
 		delete pingouin;
 		delete form;

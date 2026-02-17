@@ -50,11 +50,11 @@ void	AForm::execute(Bureaucrat& bureaucrat)
 }
 
 const char *AForm::GradeTooHighException::what() const throw() {
-	return ("Grade to high");
+	return ("Grade too high");
 }
 
 const char *AForm::GradeTooLowException::what() const throw() {
-	return ("Grade to low");
+	return ("Grade too low");
 }
 
 std::ostream& operator<<(std::ostream &o, AForm& rhs)

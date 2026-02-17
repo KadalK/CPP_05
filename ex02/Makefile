@@ -17,4 +17,7 @@ fclean: clean
 
 re : clean all
 
+rmtree : fclean
+	@rm -rf *_shrubbery
+
 .PHONY: all clean fclean re

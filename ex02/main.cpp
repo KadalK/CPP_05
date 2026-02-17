@@ -24,9 +24,9 @@ int main()
 		std::cout << *lol << std::endl;
 		std::cout << *tree << std::endl;
 		lol->signAForm(tree);
-		tree->executeAction(*lol);
-		robot->executeAction(*lol);
-		prez->executeAction(*lol);
+		tree->execute(*lol);
+		robot->execute(*lol);
+		prez->execute(*lol);
 	}
 	catch(std::exception &kk)
 	{
