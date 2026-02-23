@@ -1,6 +1,6 @@
 NAME = Bureaucrat
 CPP= c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98 -g3
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS = main.cpp Bureaucrat.cpp
 INCS = Bureaucrat.hpp

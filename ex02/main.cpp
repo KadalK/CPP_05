@@ -20,7 +20,8 @@ int main()
 		robot = new RobotomyRequestForm();
 		prez = new PresidentialPardonForm();
 		lol = new Bureaucrat("lol");
-		lol->setGrade(1);
+		lol->setGrade(150);
+		lol->gradeDown();
 		std::cout << *lol << std::endl;
 		std::cout << *tree << std::endl;
 		lol->signAForm(tree);
@@ -28,9 +29,9 @@ int main()
 		robot->execute(*lol);
 		prez->execute(*lol);
 	}
-	catch(std::exception &kk)
+	catch(std::exception &ex)
 	{
-		std::cout << kk.what() << std::endl;
+		std::cout << ex.what() << std::endl;
 	}
 		delete lol;
 		delete robot;

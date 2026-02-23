@@ -5,7 +5,6 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 
-
 int main()
 {
 	Bureaucrat	*pingouin = new Bureaucrat("pingouin");

@@ -1,6 +1,6 @@
 NAME = Bureaucrat
 CPP= c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98 -g3
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS = main.cpp Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp Intern.cpp
 INCS = Bureaucrat.hpp AForm.hpp PresidentialPardonForm.hpp RobotomyRequestForm.hpp ShrubberyCreationForm.hpp Intern.hpp
