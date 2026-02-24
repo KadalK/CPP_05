@@ -9,7 +9,7 @@ int main()
 {
 	Bureaucrat	*pingouin = new Bureaucrat("pingouin");
 	Intern		randIntern;
-	AForm		*form;
+	AForm		*form = NULL;
 
 	srand(time(0));
 
