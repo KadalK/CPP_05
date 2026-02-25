@@ -16,7 +16,7 @@ int main()
 	try
 	{
 		pingouin->setGrade(5);
-		form = randIntern.makeForm("robrequest", "Sarah Connor");
+		form = randIntern.makeForm("robotomy request", "");
 		std::cout << *pingouin << std::endl;
 		std::cout << *form << std::endl;
 		pingouin->signAForm(form);
@@ -26,8 +26,8 @@ int main()
 	{
 		std::cout << e.what() << std::endl;
 	}
-		delete pingouin;
-		delete form;
+	delete pingouin;
+	delete form;
 }
 
 
