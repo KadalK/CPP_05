@@ -9,9 +9,10 @@
 class Bureaucrat;
 
 class AForm {
+
 private:
 	std::string	const	_name;
-	bool				_signe;
+	bool				_sign;
 	int const			_gradeToSign;
 	int const			_gradeToExe;
 public:
@@ -21,20 +22,21 @@ public:
 	AForm(std::string const );
 	AForm &operator=(const AForm& );
 
+	void	setSign(bool );
+
 	int					getGradeExe() const;
-	int 				getGradeSign() const;
+	int					getGradeSign() const;
 	std::string	const	getName() const;
+	bool 				getSigned() const;
 
 	virtual void	beSigned(Bureaucrat& );
 	virtual void	execute(Bureaucrat const &) const = 0;
 
 	class GradeTooHighException : public std::exception {
-	public:
 		virtual const char* what() const throw();
 	};
 
 	class GradeTooLowException :  public std::exception {
-	public:
 		virtual const char* what() const throw();
 	};
 

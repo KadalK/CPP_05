@@ -19,16 +19,25 @@ AForm& AForm::operator=(const AForm& rhs){
 	return *this;
 }
 
-int	AForm::getGradeExe() const{
+int  AForm::getGradeExe() const{
 	return (this->_gradeToExe);
 }
 
-int	AForm::getGradeSign() const {
+int	 AForm::getGradeSign() const {
 	return (this->_gradeToSign);
 }
 
 std::string	const	AForm::getName() const{
 	return (this->_name);
+}
+
+bool	AForm::getSigned() const{
+	return (this->_sign);
+}
+
+void	AForm::setSign(bool sign)
+{
+	this->_sign = sign;
 }
 
 void	AForm::beSigned(Bureaucrat& bureaucrat){

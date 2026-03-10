@@ -14,10 +14,9 @@ int main()
 
 	try
 	{
-		tree = new ShrubberyCreationForm();
+		tree = new RobotomyRequestForm();
 		lol = new Bureaucrat("lol");
-		lol->setGrade(50);
-		lol->gradeDown();
+		lol->setGrade(5);
 		std::cout << *lol << std::endl;
 		std::cout << *tree << std::endl;
 		lol->signAForm(*tree);
