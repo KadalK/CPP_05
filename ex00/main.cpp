@@ -7,8 +7,7 @@ int main()
 
 	try
 	{
-		pin = new Bureaucrat("Truc");
-		pin->setGrade(15);
+		pin = new Bureaucrat("Truc", 15);
 		std::cout << *pin << std::endl;
 		pin->gradeUp();
 		try {

@@ -30,6 +30,11 @@ public:
 
 	void	setSigned(bool );
 
+	class NotPerm :  public std::exception {
+	public:
+		virtual const char* what() const throw();
+	};
+
 	void	beSigned(Bureaucrat& );
 	void	execute(Bureaucrat const & ) const;
 

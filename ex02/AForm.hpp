@@ -11,7 +11,7 @@ class Bureaucrat;
 class AForm {
 private:
 	std::string	const	_name;
-	bool				_signe;
+	bool				_sign;
 	int const			_gradeToSign;
 	int const			_gradeToExe;
 public:
@@ -33,6 +33,11 @@ public:
 	};
 
 	class GradeTooLowException :  public std::exception {
+		virtual const char* what() const throw();
+	};
+
+	class NotSigned :  public std::exception {
+	public:
 		virtual const char* what() const throw();
 	};
 

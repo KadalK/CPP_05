@@ -1,11 +1,10 @@
 #include "RobotomyRequestForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm() : AForm("ShrubberyCreationForm"), _target("John Doe"), _gradeToSign(145), _gradeToExe(137) {}
+RobotomyRequestForm::RobotomyRequestForm() : AForm("RobotomyRequestForm"), _target("John Doe"), _name("RobotomyRequestForm"), _gradeToSign(145), _gradeToExe(137) {}
 
-RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm("RobotomyRequestForm"), _target(target), _gradeToSign(145), _gradeToExe(137) {}
+RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm("RobotomyRequestForm"), _target(target), _name("RobotomyRequestForm"), _gradeToSign(145), _gradeToExe(137) {}
 
-
-RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& copy) : AForm("RobotomyRequestForm"), _target("John Doe"), _gradeToSign(145), _gradeToExe(137) {
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& copy) : AForm("RobotomyRequestForm"), _target("John Doe"), _name("RobotomyRequestForm"), _gradeToSign(145), _gradeToExe(137) {
 	*this = copy;
 }
 
@@ -48,6 +47,8 @@ void	RobotomyRequestForm::beSigned(Bureaucrat& bureaucrat){
 
 void	RobotomyRequestForm::execute(Bureaucrat const & bureaucrat) const
 {
+	if (!this->_signed)
+		throw NotSigned();
 
 	if (bureaucrat.getGrade() < this->_gradeToExe)
 	{

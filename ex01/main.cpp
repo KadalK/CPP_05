@@ -15,6 +15,7 @@ int main()
 	std::cout << *Formol << std::endl;
 	pingouin->signForm(*Formol);
 
+
 	delete pingouin;
 	delete Formol;
 }

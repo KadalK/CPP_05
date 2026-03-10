@@ -6,6 +6,10 @@ Bureaucrat::Bureaucrat(const std::string& name) : _name(name), _grade(150) {}
 
 Bureaucrat::Bureaucrat(const Bureaucrat& copy) : _name(copy._name), _grade(copy._grade) {}
 
+Bureaucrat::Bureaucrat(const std::string& name, int grade) : _name(name) {
+	setGrade(grade);
+}
+
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat& rhs){
 	if (this != &rhs)
 		this->_grade = rhs._grade;
@@ -48,14 +52,13 @@ void	Bureaucrat::gradeDown(){
 	this->_grade++;
 }
 
-void	Bureaucrat::signAForm(AForm *AForm){
-	if (!AForm)
-		return;
+void	Bureaucrat::signAForm(AForm &AForm){
+
 
 	try {
-		AForm->beSigned(*this);
+		AForm.beSigned(*this);
 	} catch (std::exception &e) {
-		std::cout << this->_name << " couldn’t sign " << AForm->getName() << " because " << e.what() <<std::endl;
+		std::cout << this->_name << " couldn’t sign " << AForm.getName() << " because " << e.what() <<std::endl;
 	}
 }
 

@@ -1,8 +1,8 @@
 #include "Form.hpp"
 
-Form::Form() : _name("administrative shit"), _signe(false), _gradeToSign(150), _gradeToExe(150) {}
+Form::Form() : _name("administrative shit"), _sign(false), _gradeToSign(150), _gradeToExe(150) {}
 
-Form::Form(const Form& copy) : _name(copy._name), _signe(false), _gradeToSign(copy._gradeToSign), _gradeToExe(copy._gradeToExe) {}
+Form::Form(const Form& copy) : _name(copy._name), _sign(false), _gradeToSign(copy._gradeToSign), _gradeToExe(copy._gradeToExe) {}
 
 Form::Form(int const grade) : _name("administrative shit"), _gradeToSign(grade), _gradeToExe(150) {
 	if (grade > 150)
@@ -13,7 +13,7 @@ Form::Form(int const grade) : _name("administrative shit"), _gradeToSign(grade),
 
 Form& Form::operator=(const Form& rhs){
 	if (this != &rhs)
-		this->_signe = rhs._signe;
+		this->_sign = rhs._sign;
 	return *this;
 }
 
@@ -33,7 +33,7 @@ void	Form::beSigned(Bureaucrat bureaucrat){
 	if (bureaucrat.getGrade() <= this->_gradeToSign)
 	{
 		std::cout << bureaucrat.getName() << " signed " << this->getName() << std::endl;
-		this->_signe = true;
+		this->_sign = true;
 	}
 	else
 		throw GradeTooLowException();

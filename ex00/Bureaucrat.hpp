@@ -11,6 +11,7 @@ private:
 public:
 	Bureaucrat();
 	Bureaucrat(const std::string& );
+	Bureaucrat(const std::string& , int );
 	Bureaucrat(const Bureaucrat& );
 	Bureaucrat &operator=(const Bureaucrat& );
 

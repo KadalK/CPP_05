@@ -11,7 +11,7 @@ class Bureaucrat;
 class Form {
 private:
 	std::string	const	_name;
-	bool				_signe;
+	bool				_sign;
 	int const			_gradeToSign;
 	int const			_gradeToExe;
 public:
@@ -27,6 +27,7 @@ public:
 	void	beSigned(Bureaucrat );
 
 	class GradeTooHighException : public std::exception {
+	public:
 		virtual const char* what() const throw();
 	};
 

@@ -1,10 +1,10 @@
 #include "PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm() : AForm("PresidentialPardonForm"), _target("John Doe"), _gradeToSign(25), _gradeToExe(5) {}
+PresidentialPardonForm::PresidentialPardonForm() : AForm("PresidentialPardonForm"), _target("John Doe"), _name("PresidentialPardonForm"), _gradeToSign(25), _gradeToExe(5) {}
 
-PresidentialPardonForm::PresidentialPardonForm(std::string target) : AForm("PresidentialPardonForm"), _target(target), _gradeToSign(25), _gradeToExe(5) {}
+PresidentialPardonForm::PresidentialPardonForm(std::string target) : AForm("PresidentialPardonForm"), _target(target), _name("PresidentialPardonForm"), _gradeToSign(25), _gradeToExe(5) {}
 
-PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm& copy) : AForm("PresidentialPardonForm"), _target("John Doe"), _gradeToSign(25), _gradeToExe(5) {
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm& copy) : AForm("PresidentialPardonForm"),  _target("John Doe"), _name("PresidentialPardonForm"), _gradeToSign(25), _gradeToExe(5) {
 	*this = copy;
 }
 
@@ -48,8 +48,11 @@ void	PresidentialPardonForm::beSigned(Bureaucrat& bureaucrat){
 		throw GradeTooLowException();
 }
 
-void	PresidentialPardonForm::execute(Bureaucrat const & bureaucrat) const{
-	if (bureaucrat.getGrade() <= this->_gradeToSign)
+// idem que dans exo precedent
+void	PresidentialPardonForm::execute(Bureaucrat const & bureaucrat) const {
+	if (!this->_signed)
+		throw NotSigned();
+	if (bureaucrat.getGrade() <= this->_gradeToExe)
 		std::cout << this->_target << " has been pardoned by Zaphod Beeblebrox" << std::endl;
 	else
 		throw GradeTooLowException();

@@ -29,10 +29,17 @@ public:
 	virtual void	execute(Bureaucrat const &) const = 0;
 
 	class GradeTooHighException : public std::exception {
+	public:
 		virtual const char* what() const throw();
 	};
 
 	class GradeTooLowException :  public std::exception {
+	public:
+		virtual const char* what() const throw();
+	};
+
+	class NotSigned :  public std::exception {
+	public:
 		virtual const char* what() const throw();
 	};
 
