@@ -38,7 +38,6 @@ std::string	const	Bureaucrat::getName() const {
 	return (this->_name);
 }
 
-
 void	Bureaucrat::gradeUp(){
 
 	if (this->_grade <= 1)

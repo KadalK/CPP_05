@@ -5,31 +5,28 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 
-int main()
+int main(void)
 {
-	Bureaucrat	*pingouin = new Bureaucrat("pingouin");
-	Intern		randIntern;
-	AForm		*form = NULL;
-
-	srand(time(0));
-
+	AForm *form = NULL;
 	try
 	{
-		pingouin->setGrade(5);
-		form = randIntern.makeForm("shrubbery creation", "Sarah Connor");
-		std::cout << form->getName() << std::endl;
-		std::cout << *pingouin << std::endl;
-		std::cout << *form << std::endl;
-		pingouin->signAForm(form);
-		form->execute(*pingouin);
+		Bureaucrat test;
+		Intern Intern;
+		form = Intern.makeForm("robotomy request", "");
+		if (form)
+		{
+			test.gradeDown();
+			test.signAForm(form);
+			test.executeAForm(*form);
+		}
 	}
-	catch(std::exception &e)
+	catch (std::exception &e)
 	{
-		std::cout << e.what() << std::endl;
 	}
-	delete pingouin;
+	std::cout << "\n===================================================="
+			  << std::endl;
 	delete form;
+	return 0;
 }
-
 
 

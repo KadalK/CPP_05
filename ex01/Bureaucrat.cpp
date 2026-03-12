@@ -1,12 +1,8 @@
 #include "Bureaucrat.hpp"
 
 Bureaucrat::Bureaucrat() : _name("John Doe"), _grade(150){}
-
 Bureaucrat::Bureaucrat(const std::string& name) : _name(name), _grade(150) {}
-
-
 Bureaucrat::Bureaucrat(const Bureaucrat& copy) : _name(copy._name), _grade(copy._grade) {}
-
 Bureaucrat::Bureaucrat(const std::string& name, int grade) : _name(name) {
 	setGrade(grade);
 }
@@ -39,7 +35,6 @@ std::string	const	Bureaucrat::getName() const {
 	return (this->_name);
 }
 
-
 void	Bureaucrat::gradeUp(){
 
 	if (this->_grade <= 1)
@@ -50,7 +45,7 @@ void	Bureaucrat::gradeUp(){
 	this->_grade--;
 }
 
-void	Bureaucrat::gradeDown(){
+void	Bureaucrat::gradeDown() {
 	if (this->_grade >= 150)
 	{
 		std::cout << "You can't grade down:" << std::endl;
@@ -73,7 +68,6 @@ std::ostream& operator<<(std::ostream &o, Bureaucrat& rhs)
 	o << rhs.getName() << ", bureaucrat grade " << rhs.getGrade() << ".";
 	return o;
 }
-
 
 const char *Bureaucrat::GradeTooHighException::what() const throw() {
 	return ("Grade too high");

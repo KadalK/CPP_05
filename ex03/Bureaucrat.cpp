@@ -1,9 +1,7 @@
 #include "Bureaucrat.hpp"
 
 Bureaucrat::Bureaucrat() : _name("John Doe"), _grade(150) {}
-
 Bureaucrat::Bureaucrat(const std::string& name) : _name(name), _grade(150) {}
-
 Bureaucrat::Bureaucrat(const Bureaucrat& copy) : _name(copy._name), _grade(copy._grade) {}
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat& rhs){
@@ -59,6 +57,15 @@ void	Bureaucrat::signAForm(AForm *AForm){
 	}
 	catch (std::exception &e) {
 		std::cout << this->_name << " couldn’t sign " << AForm->getName() << " because " << e.what() <<std::endl;
+	}
+}
+
+void	Bureaucrat::executeForm(AForm const & AForm) const{
+	try {
+			AForm.execute(*this);
+	}
+	catch (std::exception &e) {
+		std::cout << this->_name << " couldn’t sign " << AForm.getName() << " because " << e.what() <<std::endl;
 	}
 }
 
