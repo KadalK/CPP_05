@@ -37,5 +37,4 @@ void	RobotomyRequestForm::execute(Bureaucrat const & bureaucrat) const
 
 }
 
-
 RobotomyRequestForm::~RobotomyRequestForm(){}

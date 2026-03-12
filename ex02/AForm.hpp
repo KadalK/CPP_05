@@ -9,7 +9,6 @@
 class Bureaucrat;
 
 class AForm {
-
 private:
 	std::string	const	_name;
 	bool				_sign;

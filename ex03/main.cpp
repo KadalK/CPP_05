@@ -16,8 +16,8 @@ int main(void)
 		if (form)
 		{
 			test.gradeDown();
-			test.signAForm(form);
-			test.executeAForm(*form);
+			test.signForm(form);
+			test.executeForm(*form);
 		}
 	}
 	catch (std::exception &e)

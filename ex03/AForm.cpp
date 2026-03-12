@@ -1,11 +1,8 @@
 #include "AForm.hpp"
 
 AForm::AForm() : _name("AForm"), _sign(false), _gradeToSign(150), _gradeToExe(150) {}
-
 AForm::AForm(std::string name) : _name(name), _sign(false), _gradeToSign(150), _gradeToExe(150)  {}
-
 AForm::AForm(const AForm& copy) : _name(copy._name), _sign(false), _gradeToSign(copy._gradeToSign), _gradeToExe(copy._gradeToExe) {}
-
 AForm::AForm(std::string const name, int const gradeToSing, int const gradeToExe) : _name(name), _sign(false), _gradeToSign(gradeToSing), _gradeToExe(gradeToExe) {
 	if (gradeToSing > 150 || gradeToExe > 150)
 		throw GradeTooLowException();
